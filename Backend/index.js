@@ -5,6 +5,8 @@ import notesRoute from "./routes/Todo.js";
 import cors from "cors";
 import dotenv from "dotenv";
 import path from "path";
+import { dirname } from "path";
+import { fileURLToPath } from "url";
 
 const app = express();
 
