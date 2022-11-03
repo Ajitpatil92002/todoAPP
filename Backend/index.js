@@ -5,10 +5,16 @@ import notesRoute from "./routes/Todo.js";
 import cors from "cors";
 import dotenv from "dotenv";
 import path from "path";
+import { dirname } from "path";
+import { fileURLToPath } from "url";
 
 const app = express();
 
 dotenv.config();
+
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
 const PORT = process.env.PORT || 5000;
 
 mongoosse.connect(process.env.MONGO_URL, (err) => {

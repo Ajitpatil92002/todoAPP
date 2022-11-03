@@ -35,7 +35,7 @@ export const Edit_Todo_API = async ({ completed, _id, token }) => {
     completed: completed,
   });
 
-  let response = await fetch(`${Base_Url}/api/todos"/edit/${_id}`, {
+  let response = await fetch(`${Base_Url}/api/todos/edit/${_id}`, {
     method: "PUT",
     body: bodyContent,
     headers: {
@@ -49,7 +49,7 @@ export const Edit_Todo_API = async ({ completed, _id, token }) => {
 };
 
 export const Delete_Todo_API = async ({ _id, token }) => {
-  let response = await fetch(`${Base_Url}/api/todos"/delete/${_id}`, {
+  let response = await fetch(`${Base_Url}/api/todos/delete/${_id}`, {
     method: "DELETE",
     headers: {
       authtoken: token,
