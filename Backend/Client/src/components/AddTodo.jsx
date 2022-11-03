@@ -47,6 +47,9 @@ const AddTodo = () => {
           onChange={handleChange}
           className="flex-grow h-8 ml-4 bg-transparent focus:outline-none font-medium border-b-2 border-b-gray-300"
           type="text"
+          minLength={3}
+          maxLength={50}
+          required
           placeholder="add a new task"
         />
       </form>
