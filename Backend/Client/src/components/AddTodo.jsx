@@ -12,6 +12,7 @@ const AddTodo = () => {
 
   const handleChange = (e) => {
     setTodoValue(e.target.value);
+    setErr("")
   };
 
   const handleSubmit = async (e) => {
