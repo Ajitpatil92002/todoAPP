@@ -51,6 +51,7 @@ const AddTodo = () => {
         />
       </svg>
       <form onSubmit={handleSubmit}>
+        <span className="text-red-500">{err && err}</span>
         <input
           value={todoValue}
           onChange={handleChange}
