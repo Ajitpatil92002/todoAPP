@@ -5,10 +5,10 @@ import { ACTIONS } from "../context/TodoContext/TodoReducers";
 import useAuthContext from "../hooks/useAuthContext";
 
 const AddTodo = () => {
-  
   const { user } = useAuthContext();
   const { dispatch } = useContext(TodoContext);
   const [todoValue, setTodoValue] = useState("");
+  const [err, setErr] = useState("");
 
   const handleChange = (e) => {
     setTodoValue(e.target.value);
@@ -16,14 +16,23 @@ const AddTodo = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let item = await Create_Todo_API({ title: todoValue, completed: false },user.Token);
-    dispatch({
-      type: ACTIONS.ADD_TODO,
-      playload: {
-        todo: item,
-      },
-    });
-    setTodoValue("");
+    let value = todoValue.trim();
+    if (value.length === 0) {
+      setErr("Enter valid text");
+      return;
+    } else {
+      let item = await Create_Todo_API(
+        { title: todoValue, completed: false },
+        user.Token
+      );
+      dispatch({
+        type: ACTIONS.ADD_TODO,
+        playload: {
+          todo: item,
+        },
+      });
+      setTodoValue("");
+    }
   };
   return (
     <button className="flex items-center w-full h-8 px-2 mb-6 text-sm font-medium rounded">
