@@ -1,6 +1,5 @@
 import Base_Url from "../config";
 
-const url = "http://localhost:5000/api/todos";
 export const Get_Todos_API = async (token) => {
   let response = await fetch(`${Base_Url}/api/todos`, {
     method: "GET",
