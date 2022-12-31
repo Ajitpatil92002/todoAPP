@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "heroku-postbuild": "cd Client && npm install && npm run build",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "render-postbuild": "npm install && cd Client npm run build"
   },
   "engines": {
     "node": ">=16.14.0"
