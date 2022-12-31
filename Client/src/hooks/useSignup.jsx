@@ -10,7 +10,7 @@ export const useSignup = () => {
   const signup = async (name, email, password) => {
     setIsLoding(true);
     setError(null);
-    const url = "http://localhost:5000/api/auth/register";
+    // const url = "http://localhost:5000/api/auth/register";
 
     const response = await fetch(Base_Url+"/api/auth/register", {
       method: "POST",
