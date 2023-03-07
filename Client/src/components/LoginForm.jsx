@@ -58,12 +58,17 @@ const LoginForm = () => {
                 className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               />
             </div>
+            {isLoading && (
+              <p className="p-4">
+                Loading wait server needs some time to spin...
+              </p>
+            )}
             <button
               disabled={isLoading}
               type="submit"
-              className="text-white bg-gray-900 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 rounded text-lg"
+              className="text-white bg-gray-900 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 rounded text-lg disabled:cursor-not-allowed"
             >
-              Button
+              Login {isLoading && "   Loding wait ..."}
             </button>
           </div>
         </form>

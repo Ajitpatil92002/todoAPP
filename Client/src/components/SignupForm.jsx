@@ -25,7 +25,9 @@ const SignupForm = () => {
             <p className="leading-relaxed mb-5 text-gray-600">
               For Productive Work use TODO APP
             </p>
-            {error && <p className="leading-relaxed mb-5 text-red-600">{error}</p>}
+            {error && (
+              <p className="leading-relaxed mb-5 text-red-600">{error}</p>
+            )}
             <div className="relative mb-4">
               <label htmlFor="name" className="leading-7 text-sm text-gray-200">
                 Name
@@ -40,7 +42,10 @@ const SignupForm = () => {
               />
             </div>
             <div className="relative mb-4">
-              <label htmlFor="email" className="leading-7 text-sm text-gray-200">
+              <label
+                htmlFor="email"
+                className="leading-7 text-sm text-gray-200"
+              >
                 Email
               </label>
               <input
@@ -53,7 +58,10 @@ const SignupForm = () => {
               />
             </div>
             <div className="relative mb-4">
-              <label htmlFor="message" className="leading-7 text-sm text-gray-200">
+              <label
+                htmlFor="message"
+                className="leading-7 text-sm text-gray-200"
+              >
                 Password
               </label>
               <input
@@ -65,11 +73,16 @@ const SignupForm = () => {
                 className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               />
             </div>
+            {isLoading && (
+              <p className="p-4">
+                Loading wait server needs some time to spin...
+              </p>
+            )}
             <button
               disabled={isLoading}
               className="text-white bg-gray-900 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 rounded text-lg"
             >
-              Button
+              Sign Up {isLoading && "   Loding wait ..."}
             </button>
           </div>
         </form>
